@@ -8,6 +8,7 @@ $(document).ready( function() {
     
 
     $("#search-btn").on("click", function() {
+      $("#articles-container").empty();
 
         let keyword = $("#search-term").val().trim();
         let startYear = $("#start-year").val().trim();
@@ -61,37 +62,9 @@ $(document).ready( function() {
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    $("#clear-btn").on("click", function() {
+      $("#articles-container").empty();
+    })
 
 
 
