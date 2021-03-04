@@ -41,13 +41,17 @@ $(document).ready( function() {
                 let snippet = response.response.docs[i].snippet;
                 let byline = response.response.docs[i].byline.original;
                 let link = response.response.docs[i].web_url;
+                let pubdate = response.response.docs[i].pub_date;
+
+                pubdate = pubdate.slice(0, 10);
 
                 let newArticle = $("<article>");
                 headline = $("<h2>").html("<a href='" + link + "' target='_blank'>" + headline + "</a>");
+                date = $("<h5>").text(pubdate);
                 snippet = $("<p>").text(snippet);
                 byline = $("<cite>").text(byline);
 
-                newArticle.append(headline, snippet, byline);
+                newArticle.append(headline, date, snippet, byline);
 
                 $("#articles-container").append(newArticle);
             }
